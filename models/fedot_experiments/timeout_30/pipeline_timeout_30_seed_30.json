@@ -1,0 +1,76 @@
+{
+    "total_pipeline_operations": [
+        "lagged",
+        "ransac_lin_reg",
+        "lasso"
+    ],
+    "depth": 3,
+    "nodes": [
+        {
+            "operation_id": 2,
+            "operation_type": "lagged",
+            "operation_name": "LaggedTransformationImplementation",
+            "custom_params": {
+                "window_size": 43
+            },
+            "params": {
+                "window_size": 43
+            },
+            "nodes_from": [],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_2.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 1,
+            "operation_type": "ransac_lin_reg",
+            "operation_name": "LinearRegRANSACImplementation",
+            "custom_params": {
+                "min_samples": 0.19757788358166212,
+                "residual_threshold": 325.5276544170278,
+                "max_trials": 181.86914736818034,
+                "max_skips": 212502.8495232461
+            },
+            "params": {
+                "min_samples": 0.19757788358166212,
+                "residual_threshold": 325.5276544170278,
+                "max_trials": 181.86914736818034,
+                "max_skips": 212502.8495232461
+            },
+            "nodes_from": [
+                2
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_1.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 0,
+            "operation_type": "lasso",
+            "operation_name": "Lasso",
+            "custom_params": {
+                "alpha": 6.301942861375938
+            },
+            "params": {
+                "alpha": 6.301942861375938
+            },
+            "nodes_from": [
+                1
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_0.pkl"
+            ],
+            "rating": null
+        }
+    ],
+    "preprocessing": [
+        "preprocessing",
+        "data_preprocessor.pkl"
+    ],
+    "descriptive_id": "((/n_lagged_{'window_size': 43};)/n_ransac_lin_reg_{'min_samples': 0.19757788358166212, 'residual_threshold': 325.5276544170278, 'max_trials': 181.86914736818034, 'max_skips': 212502.8495232461};)/n_lasso_{'alpha': 6.301942861375938}"
+}
