@@ -18,8 +18,9 @@ ForecastingStoreSales/
 │  ├── LightGBM(Optuna)/       # Результаты LightGBM
 │  ├── MLP/                    # Результаты MLP
 │  └── SARIMA/                 # Результаты SARIMA
-├── notebooks/            # Некоторый визуальный анализ
-├── src/                  # Исходный код для запуска всех этапов
+├── notebooks/             # Некоторый визуальный анализ
+│  └── analysis.ipynb        # Результаты SARIMA
+├── src/                   # Исходный код для запуска всех этапов
 │  ├── process_data.py       # Скрипт для предобработки и инженерии признаков
 │  ├── arima_sarima.py       # Скрипт для запуска экспертной модели SARIMA
 │  ├── filter_data.py        #
