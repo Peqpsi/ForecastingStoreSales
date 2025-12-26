@@ -99,8 +99,8 @@ if __name__ == "__main__":
     print("ЗАПУСК FEDOT TIMEOUT EXPERIMENT")
 
     task, train_data, test_data = prepare_data_for_fedot()
-    seeds = [20,30,42]
-    timeouts = [1]
+    seeds = [20, 30, 42]
+    timeouts = [1, 5, 10, 15, 30, 60, 120]
 
     results = []
     for seed in seeds:
@@ -123,3 +123,4 @@ if __name__ == "__main__":
 
     print("\nВСЕ ЭКСПЕРИМЕНТЫ ЗАВЕРШЕНЫ!")
     print("Результаты в папке: fedot_experiments/")
+
