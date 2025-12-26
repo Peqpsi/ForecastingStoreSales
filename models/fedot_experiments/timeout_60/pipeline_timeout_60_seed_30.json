@@ -1,0 +1,122 @@
+{
+    "total_pipeline_operations": [
+        "lagged",
+        "ransac_lin_reg",
+        "pca",
+        "fast_ica",
+        "lasso"
+    ],
+    "depth": 5,
+    "nodes": [
+        {
+            "operation_id": 4,
+            "operation_type": "lagged",
+            "operation_name": "LaggedTransformationImplementation",
+            "custom_params": {
+                "window_size": 41.53563911947484
+            },
+            "params": {
+                "window_size": 41.53563911947484
+            },
+            "nodes_from": [],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_4.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 3,
+            "operation_type": "ransac_lin_reg",
+            "operation_name": "LinearRegRANSACImplementation",
+            "custom_params": {
+                "min_samples": 0.4,
+                "residual_threshold": 10240,
+                "max_trials": 100,
+                "max_skips": 1000
+            },
+            "params": {
+                "min_samples": 0.4,
+                "residual_threshold": 10240,
+                "max_trials": 100,
+                "max_skips": 1000
+            },
+            "nodes_from": [
+                4
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_3.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 2,
+            "operation_type": "pca",
+            "operation_name": "PCAImplementation",
+            "custom_params": {
+                "svd_solver": "full",
+                "n_components": 0.8849787873282443
+            },
+            "params": {
+                "svd_solver": "full",
+                "n_components": 0.8849787873282443
+            },
+            "nodes_from": [
+                3,
+                4
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_2.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 1,
+            "operation_type": "fast_ica",
+            "operation_name": "FastICAImplementation",
+            "custom_params": {
+                "whiten": "unit-variance"
+            },
+            "params": {
+                "whiten": "unit-variance"
+            },
+            "nodes_from": [
+                2,
+                3,
+                4
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_1.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 0,
+            "operation_type": "lasso",
+            "operation_name": "Lasso",
+            "custom_params": {
+                "alpha": 7.293739086714593
+            },
+            "params": {
+                "alpha": 7.293739086714593
+            },
+            "nodes_from": [
+                1,
+                2
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_0.pkl"
+            ],
+            "rating": null
+        }
+    ],
+    "preprocessing": [
+        "preprocessing",
+        "data_preprocessor.pkl"
+    ],
+    "descriptive_id": "((((/n_lagged_{'window_size': 41.53563911947484};)/n_ransac_lin_reg_{'min_samples': 0.4, 'residual_threshold': 10240, 'max_trials': 100, 'max_skips': 1000};;/n_lagged_{'window_size': 41.53563911947484};)/n_pca_{'svd_solver': 'full', 'n_components': 0.8849787873282443};;(/n_lagged_{'window_size': 41.53563911947484};)/n_ransac_lin_reg_{'min_samples': 0.4, 'residual_threshold': 10240, 'max_trials': 100, 'max_skips': 1000};;/n_lagged_{'window_size': 41.53563911947484};)/n_fast_ica_{'whiten': 'unit-variance'};;((/n_lagged_{'window_size': 41.53563911947484};)/n_ransac_lin_reg_{'min_samples': 0.4, 'residual_threshold': 10240, 'max_trials': 100, 'max_skips': 1000};;/n_lagged_{'window_size': 41.53563911947484};)/n_pca_{'svd_solver': 'full', 'n_components': 0.8849787873282443};)/n_lasso_{'alpha': 7.293739086714593}"
+}

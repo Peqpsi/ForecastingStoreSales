@@ -1,0 +1,143 @@
+{
+    "total_pipeline_operations": [
+        "lagged",
+        "ransac_lin_reg",
+        "fast_ica",
+        "isolation_forest_reg",
+        "lasso"
+    ],
+    "depth": 6,
+    "nodes": [
+        {
+            "operation_id": 5,
+            "operation_type": "lagged",
+            "operation_name": "LaggedTransformationImplementation",
+            "custom_params": {
+                "window_size": 65
+            },
+            "params": {
+                "window_size": 65
+            },
+            "nodes_from": [],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_5.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 4,
+            "operation_type": "ransac_lin_reg",
+            "operation_name": "LinearRegRANSACImplementation",
+            "custom_params": {
+                "min_samples": 0.8393786605456599,
+                "residual_threshold": 5657.410424231711,
+                "max_trials": 102.34435948261559,
+                "max_skips": 140801.2932277231
+            },
+            "params": {
+                "min_samples": 0.8393786605456599,
+                "residual_threshold": 5657.410424231711,
+                "max_trials": 102.34435948261559,
+                "max_skips": 140801.2932277231
+            },
+            "nodes_from": [
+                5
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_4.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 3,
+            "operation_type": "fast_ica",
+            "operation_name": "FastICAImplementation",
+            "custom_params": {
+                "whiten": "unit-variance",
+                "fun": "cube",
+                "n_components": 16
+            },
+            "params": {
+                "whiten": "unit-variance",
+                "fun": "cube",
+                "n_components": 16
+            },
+            "nodes_from": [
+                4
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_3.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 2,
+            "operation_type": "isolation_forest_reg",
+            "operation_name": "IsolationForestRegImplementation",
+            "custom_params": {
+                "max_samples": 0.392937659382667,
+                "max_features": 0.948934799683063,
+                "bootstrap": false
+            },
+            "params": {
+                "max_samples": 0.392937659382667,
+                "max_features": 0.948934799683063,
+                "bootstrap": false
+            },
+            "nodes_from": [
+                3
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_2.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 1,
+            "operation_type": "lasso",
+            "operation_name": "Lasso",
+            "custom_params": {
+                "alpha": 6.13044977620406
+            },
+            "params": {
+                "alpha": 6.13044977620406
+            },
+            "nodes_from": [
+                2
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_1.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 0,
+            "operation_type": "lasso",
+            "operation_name": "Lasso",
+            "custom_params": {
+                "alpha": 6.050641912620865
+            },
+            "params": {
+                "alpha": 6.050641912620865
+            },
+            "nodes_from": [
+                1
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_0.pkl"
+            ],
+            "rating": null
+        }
+    ],
+    "preprocessing": [
+        "preprocessing",
+        "data_preprocessor.pkl"
+    ],
+    "descriptive_id": "(((((/n_lagged_{'window_size': 65};)/n_ransac_lin_reg_{'min_samples': 0.8393786605456599, 'residual_threshold': 5657.410424231711, 'max_trials': 102.34435948261559, 'max_skips': 140801.2932277231};)/n_fast_ica_{'whiten': 'unit-variance', 'fun': 'cube', 'n_components': 16};)/n_isolation_forest_reg_{'max_samples': 0.392937659382667, 'max_features': 0.948934799683063, 'bootstrap': False};)/n_lasso_{'alpha': 6.13044977620406};)/n_lasso_{'alpha': 6.050641912620865}"
+}
